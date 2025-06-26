@@ -46,7 +46,7 @@ public class GameController {
             return response;
         }
 
-        response.put("guessesLeft", maxGuesses - guessesMade);
+        response.put("guessesLeft", maxGuesses - guessesMade+1);
         return response;
     }
 }
