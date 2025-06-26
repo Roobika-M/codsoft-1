@@ -1,7 +1,42 @@
 <!DOCTYPE html>
-<head>
-    <title>Number guesser</title>
-</head>
-<body>
-    <h1>GUESS THE NUMBER</h1>
-</body>
+<html>
+    <head>
+        <title>Guessing game</title>
+        <style>
+            body{
+                font-family: sans-serif;
+                padding : 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>GUESS THE NUMBER</h1>
+        <input type="number" id="rangeInput">
+        <button onclick="startGame()">Start Game</button>
+        <input type = "number" id="guessInput" >
+        <button onclick="makeGuess()">Make Guess</button>"
+        <script>
+            function startGame() {
+                const range = document.getElementById('rangeInput').value;
+                fetch(`http://localhost:8080/api/start?range=${range}`)
+                .then(res => res.json())
+                .then(data => {
+                maxGuesses = data.maxGuesses;
+                document.getElementById("status").innerText = `Game started! You have ${maxGuesses} guesses.`;
+                document.getElementById("start-section").style.display = "none";
+                document.getElementById("guess-section").style.display = "block";
+                });
+            }
+            function makeGuess(){
+                const guess = document.getElementById("guessInput").value;
+                fetch(`http://localhost:8080/api/guess?number=${guess}`, {method: "POST"})
+                    .then(res => res.json())
+                    .then(data => {
+                    if (data.result) {
+                        document.getElementById("status").innerText = data.result;
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
