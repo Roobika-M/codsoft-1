@@ -44,8 +44,8 @@ This project combines a **pixel-art-style frontend** with a **Spring Boot backen
 
 ## ✨ Screenshots
 
-![Screenshot](screenshot1.jpg) 
-![Screenshot](screenshot2.jpg) 
+![Screenshot](screenshot1.png) 
+![Screenshot](screenshot2.png) 
 ---
 
 
