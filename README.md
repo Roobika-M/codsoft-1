@@ -25,7 +25,7 @@ This project combines a **pixel-art-style frontend** with a **Spring Boot backen
 3. Server will run on: `http://localhost:8080`
 
 ###  Frontend
-1. Open `index.html` in your browser (double-click or serve via live server).
+1. Open `base.html` in your browser (double-click or serve via live server).
 2. Interact with the game!
 
 > Make sure the frontend is allowed to call `http://localhost:8080` (CORS is already enabled in the controller).
@@ -45,6 +45,8 @@ This project combines a **pixel-art-style frontend** with a **Spring Boot backen
 ## Screenshots
 
 ![Screenshot](screenshot.png) 
+<img src="screenshot.png" width="400"/>
+
 ---
 
 
