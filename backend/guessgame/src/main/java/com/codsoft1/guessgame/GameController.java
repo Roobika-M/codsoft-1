@@ -5,7 +5,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*") 
+@CrossOrigin(origins = "*")
 public class GameController {
 
     private int targetNumber = -1;
@@ -15,7 +15,7 @@ public class GameController {
     @GetMapping("/start")
     public Map<String, Object> startGame(@RequestParam int range) {
         targetNumber = new Random().nextInt(range + 1);
-        maxGuesses = (int) (Math.log(range) / Math.log(2));
+        maxGuesses = (int) (Math.log(range) / Math.log(2)) + 1;
         guessesMade = 0;
 
         Map<String, Object> response = new HashMap<>();
@@ -46,7 +46,7 @@ public class GameController {
             return response;
         }
 
-        response.put("guessesLeft", maxGuesses - guessesMade+1);
+        response.put("guessesLeft", maxGuesses - guessesMade);
         return response;
     }
 }
