@@ -43,8 +43,7 @@ This project combines a **pixel-art-style frontend** with a **Spring Boot backen
 ---
 
 ## Screenshots
-
-![Screenshot](screenshot.png) 
+ 
 <img src="screenshot.png" width="400"/>
 
 ---
